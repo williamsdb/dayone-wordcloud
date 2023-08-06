@@ -1,0 +1,5 @@
+*.txt
+wordcloud2.js
+DayOne.sqlite*
+*.sqlite
+.DS_Store
