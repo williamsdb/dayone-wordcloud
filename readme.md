@@ -5,10 +5,10 @@
 <br />
 <div align="center">
 
-<h3 align="center">WordPress to PDF</h3>
+<h3 align="center">Day One Word Cloud</h3>
 
   <p align="center">
-    A simple script to allow you to export all your blog posts to a nicely formatted PDF file
+    This script takes your Day One entries and turns them into a formatted word cloud.
     <br />
   </p>
 </div>
@@ -46,7 +46,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+[Day One](https://dayoneapp.com/) is a popular journaling app for Mac and iOS, now owned by WordPress owner Automattic.
+
+I have 14 years worth of entries in my Day One app and I want to know what words I used most frequently so I decided to [crack open the database](https://www.spokenlikeageek.com/2023/06/14/querying-the-day-one-database/) and see if I could find this information.
+
+Once I had the data I wanted a nice way to display it and I decided a word cloud would be ideal.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -54,8 +58,8 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 ### Built With
 
-* [![PHP][php.net]][PHP-url]
-* [![React][React.js]][React-url]
+* [PHP](https://php.net)
+* [Wordcloud2.js] (https://github.com/timdream/wordcloud2.js)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -64,31 +68,23 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Running the script is very straight forward:
+
+1. download the code
+2. copy your Day One SQLite file to the same folder as the code
+3. run php index.php
+
+You can read more about how this all works in [this blog post](https://www.spokenlikeageek.com/2023/08/06/creating-a-word-cloud-from-your-day-one-entries/).
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+Requirements are very simple - just requires PHP and I tested on v7.4.33.
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo:
    ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+   git clone https://github.com/williamsdb/dayone-wordcloud.git
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -98,9 +94,17 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+1. make a copy of your Day One database (DayOne.sqlite) and place it in the same folder as the code. Read about [how to find your database in this article](https://dayoneapp.com/guides/day-one-sync/where-is-my-data-stored/).
+2. Run the code:
+```php index.php``` 
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+You will see output similar to the following:
+
+![](https://www.spokenlikeageek.com/wp-content/uploads/2023/08/cli-%E2%80%94-zsh-%E2%80%94-127%C3%9729-2023-08-06-11-40-27.png)
+
+When the process of extracting the word counts completes a web page will open showing your word cloud.
+
+_For more information, please refer to the [this blog post](https://www.spokenlikeageek.com/2023/08/06/creating-a-word-cloud-from-your-day-one-entries/)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -109,12 +113,10 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Known Issues
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- currently the conversion from frequencies to font sizes only works for < 10,000 max frequency
+- the word with the largest frequest is shown in red but this frequency is currently hard-coded.
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/github_username/dayone-wordcloud/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -152,7 +154,7 @@ Distributed under the GNU General Public License v3.0. See `LICENSE` for more in
 
 Your Name - [@spokenlikeageek](https://twitter.com/spokenlikeageek) - [Contact](https://www.spokenlikeageek.com/contact/)
 
-Project Link: [https://github.com/williamsdb/wordpress-to-pdf](https://github.com/williamsdb/wordpress-to-pdf)
+Project Link: [https://github.com/williamsdb/dayone-wordcloud](https://github.com/williamsdb/dayone-wordcloud)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -161,42 +163,9 @@ Project Link: [https://github.com/williamsdb/wordpress-to-pdf](https://github.co
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* [Timothy Guan-tin Chien ](https://github.com/timdream) for Wordcloud2.js
+* [Day One](https://dayoneapp.com/) for the excellent app
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo_name/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo_name/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo_name/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
-[product-screenshot]: images/screenshot.png
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Next-url]: https://nextjs.org/
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/
-[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
-[Angular-url]: https://angular.io/
-[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[Svelte-url]: https://svelte.dev/
-[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[Laravel-url]: https://laravel.com
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
-[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com 
