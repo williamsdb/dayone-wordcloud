@@ -74,7 +74,7 @@ Running the script is very straight forward:
 2. copy your Day One SQLite file to the same folder as the code
 3. run php index.php
 
-You can read more about how this all works in [this blog post](https://www.spokenlikeageek.com/2023/08/06/creating-a-word-cloud-from-your-day-one-entries/).
+You can read more about how this all works in [this blog post](https://www.spokenlikeageek.com/2023/08/09/creating-a-word-cloud-from-your-day-one-entries/).
 
 ### Prerequisites
 

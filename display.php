@@ -9,7 +9,7 @@
      * @copyright  2023 Neil Thompson
      * @license    https://www.gnu.org/licenses/gpl-3.0.en.html GNU General Public License v3.0
      * @link       https://github.com/williamsdb/dayone-wordcloud
-     * @see        https://www.spokenlikeageek.com/2023/08/06/creating-a-word-cloud-from-your-day-one-entries/ Blog post
+     * @see        https://www.spokenlikeageek.com/2023/08/09/creating-a-word-cloud-from-your-day-one-entries/ Blog post
      * @see        https://github.com/timdream/wordcloud2.js Word cloud JS code
      */
 
